@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
 import { render, createRoot } from 'react-dom';
-// import Home from '../client/components/Home';
+import Home from './components/Home.jsx';
 // import App from 'App';
 
-// Clear existing HTML content
-// document.body.innerHTML = '<div id="app"></div>';
-
-const root = createRoot(document.getElementById('app'));
+const root = createRoot(document.getElementById('root'));
 root.render(<Home></Home>);
-// render(
-//     <App />,
-//     document.getElementById('app')
-// );
