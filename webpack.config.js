@@ -10,19 +10,20 @@ module.exports = {
     },
     resolve: {
         alias: {
-            Client: path.resolve(__dirname, '/client/')
+            Components: path.resolve(__dirname, 'client/components/')
         }
     },
-    mode: process.env.NODE_ENV,
+    // mode: process.env.NODE_ENV,
+    mode: 'development',
     devServer: {
         host: 'localhost',
         port: 8080,
         static: {
-            directory: path.resolve(__dirname, 'dist'),
+            directory: path.resolve(__dirname),
             publicPath: '/'
         },
         proxy: [{
-            '/api': {
+            '/': {
                 target: 'http://localhost:3000',
             }
         }],
