@@ -4,8 +4,11 @@ const MusicKeys = require('../models/musicKeysModel');
 
 const generateController = {};
 
-generateController.getAllKeys = async (req, res, next) => {
-    await MusicKeys.find({})
+/**
+ * Gets all musical keys returned as a list of objects.
+ */
+generateController.getAllKeys = (req, res, next) => {
+    MusicKeys.find({})
         .then(response => {
             console.log('logging response:\n\n', response);
             res.locals.keys = response;
@@ -14,6 +17,28 @@ generateController.getAllKeys = async (req, res, next) => {
         .catch(err => {
             if (err) return next('Error in generateController.getAllKeys: ' + JSON.stringify(err));
         });
+}
+
+/**
+ * Returns all keywords within the musicKeys[emotions] collection returned as an array
+ */
+generateController.getAllKeywords = (req, res, next) => {
+    MusicKeys.find({})
+        .then(response => {
+            let keywords = [];
+            
+            for(const key of response) {
+                console.log(key.emotions.split(','));
+                const subArr = key.emotions.split(', ')
+                keywords.push(...subArr);
+            }
+
+            res.locals.keywords = keywords;
+            return next();
+        })
+        .catch(err => {
+            return next('There was an error in generateController.getAllKeywords: ' + JSON.stringify(err));
+        })
 }
 
 module.exports = generateController;
