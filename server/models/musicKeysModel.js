@@ -1,19 +1,19 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const musicalKeySchema = new Schema({
+const musicKeysSchema = new Schema({
     name: {
         type: String, 
         required: true
     },
     notes: {
-        type: [String],
+        type: String,
         require: true
     },
     emotions: {
-        type: [String],
+        type: String,
         required: true
     }
-});
+}, { collection: 'musicKeys' });
 
-module.exports = mongoose.model('MusicalKey', musicalKeySchema);
+module.exports = mongoose.model('MusicKey', musicKeysSchema);

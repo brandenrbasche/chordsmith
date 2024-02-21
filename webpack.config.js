@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-    // entry: ['/client/index.js'],
     entry: path.join(__dirname, './client/index.js'),
     output: {
         path: path.join(__dirname, '/dist'),
@@ -22,11 +21,12 @@ module.exports = {
             directory: path.resolve(__dirname),
             publicPath: '/'
         },
-        proxy: [{
-            '/': {
-                target: 'http://localhost:3000',
+        proxy: [
+            {
+                context: ['/generate'],
+                target: 'http://localhost:3000'
             }
-        }],
+        ]
     },
     module: {
         rules: [
