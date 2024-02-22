@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as Tone from 'tone';
+import { motion } from 'framer-motion';
 
 function Navbar({ resetLink, setResetLink, resetLinkClass, setResetLinkClass, started, setStarted  }) {
 
@@ -7,6 +9,7 @@ function Navbar({ resetLink, setResetLink, resetLinkClass, setResetLinkClass, st
     setResetLink('Electonic melody generator');
     setResetLinkClass('disabled');
     setStarted(!started);
+    Tone.Transport.stop();
   };
 
   return (
