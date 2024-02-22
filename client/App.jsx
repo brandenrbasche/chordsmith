@@ -1,11 +1,23 @@
-import React, { Component } from 'react';
-// import Home from './components/Home';
-import HomeContainer from './containers/HomeContainer';
+import React, { useState } from 'react';
+import HomeContainer from './containers/HomeContainer.jsx';
+import GenerateContainer from './containers/GenerateContainer.jsx';
 
-const App = () => (
+const App = () => {
+  // const [started, setStarted] = useState(false);
+  // console.log('logging initial started: ', started);
+
+  return (
+    <>
     <div id="root">
       <HomeContainer />
-    </div>
-);
+      /* !started ? {
+        <HomeContainer started="started" setStarted={setStarted} />
+      } : {
+        <GenerateContainer />
+      }
+    </div> */
+    </>
+  );
+}
 
 export default App;

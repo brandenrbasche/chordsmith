@@ -1,5 +1,7 @@
 /* IMPORT FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Kode+Mono:wght@700&display=swap');
 
 * {
     margin: 0;
@@ -8,17 +10,33 @@
 
 h2 {
     font-family: 'Chakra Petch';
+    /* font-family: "Kode Mono"; */
     font-weight: 700;
     font-style: normal;
+    font-size: 24px;
 }
 
-/* NAVBAR STYLES */
+h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+}
+
+.home-container-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .navbar {
+    background-color: yellow;
+}
+
+.nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 35px;
-    background-color: yellow;
+    /* max-width: 900px; */
 }
 
 .nav-header, .nav-text {
@@ -27,10 +45,140 @@ h2 {
 
 .nav-header {
     cursor: pointer;
+
 }
 
+.nav-text {
+    font-size: 12px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right > a {
+    display: flex;
+    justify-content: center;
+}
+
+.enabled {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.refresh-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 7px;
+}
+
+
+/* HOMEPAGE STYLES */
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    max-width: 80vw;
+}
+ 
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    width: 100%;
+}
+
+.hero-container > h1 {
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.hero-container > p {
+    margin-bottom: 20px;
+}
+
+.get-started-btn {
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    background: none;
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+/* GENERATE CONTAINER STYLES */
+.generate-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 90vh;
+}
+
+.selector-container {
+    width: 90vw;
+    height: fit-content;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.word-cell {
+    padding: 5px;
+    font-family: 'DM Sans', sans-serif;
+    margin-right: 10px;
+    cursor: pointer;
+    color: gray;
+    text-align: center;
+}
+
+.word-cell .disabled {
+    cursor: default;
+}
+
+.word-cell:hover {
+    color: black;
+}
+
+.selected-word-p {
+    font-family: 'DM Sans', sans-serif;
+    padding: 3px;
+    font-weight: 1000;
+}
+
+.selected-keyword-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.keyword-selector-header {
+    margin-top: 20px;
+}
+
+.next-btn {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+}
+
+/* MEDIA QUERIES */
 @media screen and (max-width: 460px) {
-    .navbar {
+    .nav-container {
         flex-direction: column;
         align-items: flex-start;
         padding: 20px;
