@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import KeywordsSelector from '../components/KeywordsSelector.jsx';
 import { Synth } from '../components/Synth.jsx';
-import { motion } from 'framer-motion';
+import { motion, transform } from 'framer-motion';
 
 export default function GenerateContainer() {
   const [selectedKeywords, setSelectedKeywords] = useState('');
@@ -15,7 +15,13 @@ export default function GenerateContainer() {
       .then(res =>  res.json())
       .then(data => {
         data.forEach(word => {
-          keywords.push(<motion.div whileHover={{scale: .97}} transition={{type: 'spring', stiffness: 400, damping: 20}} key={word} className={'word-cell'} onClick={() => handleKeywordSelect(word)}>{word}</motion.div>);
+          keywords.push(<motion.div 
+            whileHover={{scale: .97, color: '#32FF17'}} 
+            transition={{type: 'spring', stiffness: 400, damping: 20}} 
+            key={word} className={'word-cell'} 
+            onClick={() => handleKeywordSelect(word)}>
+            {word}
+          </motion.div>);
         });
         setAllKeywords(keywords);
       })

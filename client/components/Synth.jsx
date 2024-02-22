@@ -101,7 +101,8 @@ export const Synth = ({ selectedKey }) => {
 
         <div className="speed-range-container">
           <label htmlFor='speed'>Speed: </label>
-          <motion.input style={{x}} whileHover={{scale: 1.1}} className='speed-slider'  id='speed' type='range' min='100' max='2000' value={speed} onChange={((e) => handleRange(e))} />
+          {/* <motion.input style={{x}} whileHover={{scale: 1.1}} className='speed-slider'  id='speed' type='range' min='100' max='2000' value={speed} onChange={((e) => handleRange(e))} /> */}
+          <input className='speed-slider'  id='speed' type='range' min='100' max='2000' value={speed} onChange={((e) => handleRange(e))} />
         </div>
       </div>
     </div>
